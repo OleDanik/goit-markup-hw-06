@@ -364,6 +364,7 @@ p{
 
 .icon{
 	fill: #AFB1B8;
+	transition: fill var(--transition-duration) var(--transition-time-func);
 }
 
 .link-icon{
@@ -375,7 +376,7 @@ p{
 	align-items: center;
 	justify-content: center;
 
-	transition: background-color var(--transition-duration) var(--transition-time-func), fill var(--transition-duration) var(--transition-time-func);
+	transition: background-color var(--transition-duration) var(--transition-time-func);
 }
 
 .link-icon:hover,
@@ -426,6 +427,7 @@ p{
 	justify-content: center;
 	border: 1px solid #AFB1B8;
 	border-radius: 4px;
+	outline: transparent;
 }
 .link-client:hover,
 .link-client:focus{
@@ -501,6 +503,12 @@ p{
 	width: 370px;
 }
 
+.animation-text-block{
+	position: relative;
+	overflow: hidden;
+
+}
+
 .link-portfolio{
 	display: block;
 	text-decoration: none;
@@ -516,7 +524,8 @@ p{
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.link-portfolio:hover .text-animation  {
+.link-portfolio:hover .text-animation,
+.link-portfolio:focus .text-animation    {
 	transform: translatey(0);
  }
  
@@ -531,7 +540,6 @@ p{
 	color: var(--color-white);
 	background: rgba(33, 150, 243, 0.9);;
 	height: 400px;
-	width: 370px;
 
 
 	position: absolute;
@@ -562,6 +570,9 @@ p{
    line-height: 1.8;
 	color: var(--color-secondary);
 }
+
+
+
 
 /*-----------------------------------*/
 /* ------------FOOTER--------------- */
@@ -687,11 +698,17 @@ p{
 .subscription-input{
 	width: 358px;
 	height: 50px;
-	margin-right: 12px;
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 	border-radius: 4px;
 	background-color: transparent;
+	padding: 15px 5px 15px 16px;
+	color: var(--color-white);
+}
+
+.subscription-input:focus{
+   border-color: var(--color-action);
+	outline: 1px solid transparent;
 }
 
 
@@ -710,7 +727,7 @@ p{
 	text-align: center;
 	color: var(--color-white);
    gap: 8px;
-
+	margin-left: 12px;
 
 	transition: background-color var(--transition-duration) var(--transition-time-func),
 	color var(--transition-duration) var(--transition-time-func);
@@ -718,6 +735,10 @@ p{
 
 .subscription-icon{
 	fill: var(--color-white);
+}
+
+.form-footer{
+	display: flex;
 }
 
 /*-----------------------------------*/
@@ -921,7 +942,7 @@ p{
 .checkbox-custom{
 	height: 19px;
 	width: 19px;
-	border: 2px solid var(--logo-color);
+	border: 2px solid #000000;
 	border-radius: 4px;
 	display: flex;
 	align-items: center;
@@ -963,7 +984,6 @@ p{
 /* BUTTON */
 
 .modal-button-send{
-	position: absolute;
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 1.8;
